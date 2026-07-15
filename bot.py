@@ -13,7 +13,7 @@ OPENAI_KEY = os.getenv("OPENAI_KEY")
 bot = Bot(TOKEN)
 dp = Dispatcher()
 
-client = OpenAI(api_key=OPENAI_KEY)
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 @dp.message(Command("start"))
