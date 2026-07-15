@@ -30,25 +30,3 @@ async def ai_chat(message: types.Message):
         response = client.chat.completions.create(
             model="gpt-4.1-mini",
             messages=[
-                {
-                    "role": "user",
-                    "content": message.text
-                }
-            ]
-        )
-
-        answer = response.choices[0].message.content
-        await message.answer(answer)
-
-    except Exception as e:
-    await message.answer(
-        f"Ошибка: {e}"
-    )
-
-
-async def main():
-    await dp.start_polling(bot)
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
