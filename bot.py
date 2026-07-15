@@ -41,9 +41,9 @@ async def ai_chat(message: types.Message):
         await message.answer(answer)
 
     except Exception as e:
-        await message.answer(
-            "Ошибка AI-модуля. Попробуй позже."
-        )
+    await message.answer(
+        f"Ошибка: {e}"
+    )
 
 
 async def main():
